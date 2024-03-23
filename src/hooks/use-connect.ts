@@ -12,7 +12,7 @@ export const useConnect = () => {
     // Initialize Connect
     const connect = new Connect({
       publicKey: process.env.NEXT_PUBLIC_GANDALF_PUBLIC_KEY!,
-      redirectURL: `${process.env.NEXT_PUBLIC_VERCEL_URL || "https://aragorn.vercel.app/"}/activity`,
+      redirectURL: `https://aragorn.vercel.app/activity`,
       services
     })
 
