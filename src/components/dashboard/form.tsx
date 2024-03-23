@@ -6,7 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { cn } from "@/lib/utils"
+import { cn, openLink } from "@/lib/utils"
 import { AmazonIcon, NetflixIcon, PlayStationIcon, YoutubeIcon } from "../icon"
 import { Checkbox } from "@/components/ui/checkbox"
 import { useState } from "react"
@@ -54,9 +54,7 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({ className }) => {
 
       if (isMobile) {
         // fix safari blocker
-        setTimeout(() => {
-          window.open(connectUrl, '_blank');
-        }, 10)
+        openLink(connectUrl || "");
         return;
       }
 
