@@ -53,7 +53,10 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({ className }) => {
       const { connectUrl, dataUrl } = await init({ [config.service]: true });
 
       if (isMobile) {
-        window.open(connectUrl, '_blank');
+        // fix safari blocker
+        setTimeout(() => {
+          window.open(connectUrl, '_blank');
+        }, 10)
         return;
       }
 
