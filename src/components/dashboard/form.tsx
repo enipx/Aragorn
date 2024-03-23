@@ -55,7 +55,6 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({ className }) => {
       if (isMobile) {
         // fix safari blocker
         openLink(connectUrl || "");
-        return;
       }
 
       setImageUrl(dataUrl || "");
