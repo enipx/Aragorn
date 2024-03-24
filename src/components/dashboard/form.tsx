@@ -25,6 +25,8 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({ className }) => {
 
   const [imageUrl, setImageUrl] = useState<string>("");
 
+  const [url, setUrl] = useState<string>("");
+
   const { init, loading } = useConnect();
 
   const isMobile = useIsMobile();
@@ -58,6 +60,7 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({ className }) => {
       }
 
       setImageUrl(dataUrl || "");
+      setUrl(connectUrl || "");
       setShowConnectModal(true);
     } catch (error) {
       console.error('Error:', error)
@@ -71,6 +74,7 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({ className }) => {
         onOpenChange={(open) => setShowConnectModal(open)}
         open={showConnectModal}
         imageUrl={imageUrl}
+        dataUrl={url}
         loading={loading}
       />
       <fieldset className="grid gap-6 rounded-lg border p-4">

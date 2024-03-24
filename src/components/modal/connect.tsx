@@ -15,7 +15,6 @@ import { Button } from "../ui/button"
 export const ConnectModal = ({ imageUrl, dataUrl, loading, ...props}: AlertDialogProps & { imageUrl?: string, dataUrl?: string, loading?: boolean }) => {
   const isMobile = useIsMobile();
 
-
   const renderContent = () => {
     if (loading || !imageUrl) {
       return (
@@ -32,7 +31,7 @@ export const ConnectModal = ({ imageUrl, dataUrl, loading, ...props}: AlertDialo
         </p>
 
         { isMobile ? (
-          <a href={dataUrl} className="block text-center">
+          <a href={dataUrl} className="block text-center" target="_blank">
             <Button variant="brand" className="my-5 w-full max-w-xs mx-auto">Connect</Button>
           </a>
         ) : (
