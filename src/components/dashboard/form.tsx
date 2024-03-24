@@ -59,7 +59,7 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({ className }) => {
         openLink(connectUrl || "");
       }
 
-      setImageUrl(dataUrl || "");
+      setImageUrl(isMobile ? dataUrl || "" : connectUrl || "");
       setUrl(connectUrl || "");
       setShowConnectModal(true);
     } catch (error) {
@@ -186,7 +186,7 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({ className }) => {
             <div className="flex items-center space-x-2">
               <Checkbox id="personal-info"
                 checked={config?.sharePersonalInfo}
-                onChange={(checked) => onOptionChange("sharePersonalInfo", checked)}
+                onCheckedChange={(checked) => onOptionChange("sharePersonalInfo", checked)}
               />
               <label
                 htmlFor="personal-info"
@@ -200,7 +200,7 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({ className }) => {
               <Checkbox
                 id="location" 
                 checked={config?.shareLocation}
-                onChange={(checked) => onOptionChange("shareLocation", checked)}
+                onCheckedChange={(checked) => onOptionChange("shareLocation", checked)}
               />
               <label
                 htmlFor="location"
@@ -213,7 +213,7 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({ className }) => {
             <div className="flex items-center space-x-2">
               <Checkbox id="usage-data"
                 checked={config?.shareUsageData}
-                onChange={(checked) => onOptionChange("shareUsageData", checked)}
+                onCheckedChange={(checked) => onOptionChange("shareUsageData", checked)}
               />
               <label
                 htmlFor="usage-data"
@@ -226,7 +226,7 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({ className }) => {
             <div className="flex items-center space-x-2">
               <Checkbox id="anonymity"
                 checked={config?.anonymize}
-                onChange={(checked) => onOptionChange("anonymize", checked)}
+                onCheckedChange={(checked) => onOptionChange("anonymize", checked)}
               />
               <label
                 htmlFor="anonymity"
@@ -241,7 +241,7 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({ className }) => {
         <div className="flex items-center space-x-2">
           <Checkbox id="audit"
             checked={config?.enableAuditLogs}
-            onChange={(checked) => onOptionChange("enableAuditLogs", checked)}
+            onCheckedChange={(checked) => onOptionChange("enableAuditLogs", checked)}
           />
           <label
             htmlFor="audit"
