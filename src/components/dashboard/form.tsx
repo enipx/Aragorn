@@ -59,7 +59,7 @@ export const DashboardForm: React.FC<DashboardFormProps> = ({ className }) => {
         openLink(connectUrl || "");
       }
 
-      setImageUrl(isMobile ? dataUrl || "" : connectUrl || "");
+      setImageUrl(!isMobile ? dataUrl || "" : connectUrl || "");
       setUrl(connectUrl || "");
       setShowConnectModal(true);
     } catch (error) {
